@@ -6,112 +6,141 @@
 <title>Quick Car Rental Malta</title>
 
 <style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#f4f4f4;
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
 }
 
-header{
-  background:#111;
-  color:white;
-  padding:50px 20px;
-  text-align:center;
+header {
+  background-image: url('https://via.placeholder.com/1600x800/FF6347/FFFFFF?text=Malta+Car+Rental'); /* Hero Image */
+  background-size: cover;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
 }
 
-header h1{
-  margin:0;
-  font-size:34px;
+header h1 {
+  font-size: 50px;
+  margin: 0;
 }
 
-header p{
-  margin-top:10px;
-  font-size:18px;
+header p {
+  font-size: 20px;
 }
 
-nav{
-  background:#f39c12;
-  padding:15px;
-  text-align:center;
+nav {
+  background-color: #f39c12;
+  padding: 15px;
+  text-align: center;
 }
 
-nav a{
-  color:white;
-  text-decoration:none;
-  margin:0 20px;
-  font-weight:bold;
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: bold;
 }
 
-section{
-  padding:60px 20px;
-  text-align:center;
+section {
+  padding: 60px 20px;
+  text-align: center;
 }
 
-.cars{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:25px;
+/* Car Selection */
+.cars {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
 }
 
-.car{
-  background:white;
-  padding:25px;
-  width:260px;
-  border-radius:10px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+.car {
+  background: white;
+  padding: 25px;
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.review{
-  background:#fff3cd;
-  padding:40px;
-  border-radius:10px;
-  margin:20px;
+button {
+  background: #f39c12;
+  border: none;
+  padding: 12px 25px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.malta{
-  background:white;
-  padding:40px;
-  margin:20px;
-  border-radius:10px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+button:hover {
+  background: #d35400;
 }
 
-button{
-  background:#f39c12;
-  border:none;
-  padding:12px 25px;
-  color:white;
-  font-weight:bold;
-  border-radius:5px;
-  cursor:pointer;
+/* Review Section */
+.review {
+  background: #fff3cd;
+  padding: 40px;
+  border-radius: 10px;
+  margin: 20px;
 }
 
-button:hover{
-  background:#d35400;
+footer {
+  background: #111;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
 
-footer{
-  background:#111;
-  color:white;
-  padding:20px;
-  text-align:center;
+/* Contact Section */
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 40px;
+}
+
+/* Booking Form */
+form {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+}
+
+form input, form select, form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  width: 100%;
+}
+
+.map {
+  margin-top: 20px;
+  text-align: center;
 }
 </style>
 </head>
-
 <body>
 
 <header>
   <h1>Quick Car Rental Malta</h1>
-  <p>Airport Pickup • Best Prices • Explore Malta With Freedom</p>
+  <p>Your Gateway to Exploring Malta in Comfort and Style</p>
 </header>
 
 <nav>
   <a href="#">Home</a>
   <a href="#cars">Cars</a>
-  <a href="#malta">Explore Malta</a>
   <a href="#contact">Contact</a>
+  <a href="#booking">Book Now</a>
 </nav>
 
 <section id="cars">
@@ -122,13 +151,11 @@ footer{
       <p>Perfect for city driving</p>
       <p><strong>From €25/day</strong></p>
     </div>
-
     <div class="car">
       <h3>SUV</h3>
       <p>Comfort for family trips</p>
       <p><strong>From €45/day</strong></p>
     </div>
-
     <div class="car">
       <h3>Luxury Car</h3>
       <p>Drive in style</p>
@@ -137,19 +164,24 @@ footer{
   </div>
 </section>
 
-<section id="malta" class="malta">
-  <h2>🌴 Explore Malta</h2>
-  <p>Discover beautiful beaches, historic cities and hidden gems around the island.</p>
-  <p><strong>Popular Locations:</strong></p>
-  <p>✔ Valletta</p>
-  <p>✔ Sliema</p>
-  <p>✔ St Julian’s</p>
-  <p>✔ Mellieħa & Golden Bay</p>
-  <p>✔ Mdina – The Silent City</p>
-  <p>✔ Gozo Island</p>
+<section id="booking">
+  <h2>Book Your Car</h2>
+  <form action="#" method="POST">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="date" name="pickup_date" placeholder="Pick-up Date" required>
+    <input type="date" name="return_date" placeholder="Return Date" required>
+    <select name="car_type" required>
+      <option value="economy">Economy Car</option>
+      <option value="suv">SUV</option>
+      <option value="luxury">Luxury Car</option>
+    </select>
+    <textarea name="message" placeholder="Additional Requests or Notes"></textarea>
+    <button type="submit">Confirm Booking</button>
+  </form>
 </section>
 
-<section class="review">
+<section id="reviews" class="review">
   <h2>💬 Leave a Review & Get 5% OFF</h2>
   <p>Leave us a Google review and receive 5% discount on your next booking.</p>
   <p><strong>Discount Code: QUICK5</strong></p>
@@ -160,13 +192,24 @@ footer{
 
 <section id="contact">
   <h2>Contact Us</h2>
-  <p>Email: info@quickcarrentalmalta.com</p>
-  <p>Phone: +356 7700 0000</p>
-  <p>Malta International Airport Pickup Available</p>
+  <div class="contact">
+    <div>
+      <p>Email: info@quickcarrental.com</p>
+      <p>Phone: +356 7700 0000</p>
+      <p>Location: Malta</p>
+    </div>
+    <div>
+      <div class="map">
+        <h3>Find Us on Google Maps</h3>
+        <!-- Embed Google Map -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50755.29104240449!2d14.401291617522299!3d35.89972387200047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130d33c0b1852bdb%3A0x7a516b30387b1658!2sMalta%20International%20Airport!5e0!3m2!1sen!2smt!4v1679520324162!5m2!1sen!2smt" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer>
-  © 2026 Quick Car Rental Malta – All Rights Reserved
+  <p>© 2026 Quick Car Rental Malta – All Rights Reserved</p>
 </footer>
 
 </body>
