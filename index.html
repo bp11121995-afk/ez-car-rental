@@ -3,264 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EZ Car Rental Malta</title>
+<title>Quick Car Rental - Malta</title>
 
 <style>
 body{
-  margin:0;
-  font-family:'Segoe UI',sans-serif;
-  background:#f5f7fa;
-  color:#222;
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f4f4;
 }
 
-/* NAVIGATION */
-nav{
-  position:fixed;
-  width:100%;
-  background:#0a1f44;
-  padding:15px;
-  text-align:center;
-  z-index:1000;
-}
-nav a{
-  color:white;
-  margin:0 20px;
-  text-decoration:none;
-  font-weight:bold;
+header{
+    background:url("https://images.unsplash.com/photo-1590080877777-3a5fbe4f0c2d") no-repeat center center/cover;
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
 }
 
-/* HERO */
-.hero{
-  background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
-  url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c');
-  background-size:cover;
-  background-position:center;
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  color:white;
-  text-align:center;
-  padding:20px;
+header h1{
+    font-size:50px;
+    margin:0;
+    background:rgba(0,0,0,0.6);
+    padding:15px 25px;
 }
 
-.hero h1{
-  font-size:48px;
-  margin-bottom:10px;
+header p{
+    font-size:20px;
+    background:rgba(0,0,0,0.6);
+    padding:10px 20px;
 }
 
-.hero p{
-  font-size:20px;
-  margin-bottom:30px;
-}
-
-/* BOOKING BOX */
-.booking-box{
-  background:white;
-  padding:30px;
-  border-radius:12px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
-  max-width:900px;
-  width:100%;
-}
-
-.booking-box form{
-  display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
-}
-
-.booking-box input,
-.booking-box select{
-  padding:12px;
-  border-radius:6px;
-  border:1px solid #ccc;
-}
-
-.booking-box button{
-  background:#0a1f44;
-  color:white;
-  border:none;
-  padding:14px;
-  font-weight:bold;
-  border-radius:6px;
-  cursor:pointer;
-}
-
-/* SECTIONS */
 section{
-  padding:80px 20px;
-  text-align:center;
+    padding:50px 10%;
+    text-align:center;
 }
 
-.cars{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:30px;
+h2{
+    margin-bottom:30px;
 }
 
-.car-card{
-  background:white;
-  padding:20px;
-  width:280px;
-  border-radius:12px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-  transition:0.3s;
+.fleet{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
-.car-card img{
-  width:100%;
-  border-radius:8px;
+.car{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
-.car-card:hover{
-  transform:translateY(-5px);
+.car img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:8px;
 }
 
-.car-card a{
-  display:inline-block;
-  margin-top:10px;
-  background:#0a1f44;
-  color:white;
-  padding:8px 15px;
-  text-decoration:none;
-  border-radius:6px;
+.places{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.place{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.place img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.place a{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 12px;
+    background:#007bff;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
 }
 
 footer{
-  background:#0a1f44;
-  color:white;
-  padding:30px;
-  text-align:center;
+    background:#111;
+    color:white;
+    padding:20px;
+    text-align:center;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-  <a href="#">Home</a>
-  <a href="#fleet">Fleet</a>
-  <a href="#explore">Explore Malta</a>
-</nav>
+<header>
+    <h1>Quick Car Rental</h1>
+    <p>Malta • Always Available • From €8 Per Day</p>
+</header>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>EZ Car Rental Malta</h1>
-  <p>Airport Pickup • Island Delivery • Best Local Prices</p>
+<section>
+    <h2>Our Fleet</h2>
+    <div class="fleet">
 
-  <div class="booking-box">
-    <form onsubmit="sendToWhatsApp(); return false;">
-      <input type="date" required>
-      <input type="date" required>
+        <div class="car">
+            <img src="https://images.unsplash.com/photo-1583267746897-2cf415887172">
+            <h3>Category A – Mini (Toyota Aygo / Similar)</h3>
+            <p>From €8 / day</p>
+        </div>
 
-      <select required>
-        <option value="">Pickup Location</option>
-        <option>Malta International Airport</option>
-        <option>Sliema</option>
-        <option>St Julian's</option>
-        <option>Valletta</option>
-      </select>
+        <div class="car">
+            <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d">
+            <h3>Category B – Economy (Toyota Yaris / Similar)</h3>
+            <p>From €12 / day</p>
+        </div>
 
-      <select required>
-        <option value="">Car Category</option>
-        <option>Mini €8/day</option>
-        <option>Economy €12/day</option>
-        <option>Compact €16/day</option>
-        <option>Sedan €20/day</option>
-        <option>SUV €24/day</option>
-        <option>Family Van €28/day</option>
-        <option>7 Seater €32/day</option>
-        <option>9 Seater €36/day</option>
-      </select>
+        <div class="car">
+            <img src="https://images.unsplash.com/photo-1605559424843-9e4c22863f74">
+            <h3>Category C – Compact (VW Polo / Similar)</h3>
+            <p>From €16 / day</p>
+        </div>
 
-      <button type="submit">Check Availability</button>
-    </form>
-  </div>
-</div>
+        <div class="car">
+            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8">
+            <h3>Category D – Sedan</h3>
+            <p>From €20 / day</p>
+        </div>
 
-<!-- FLEET -->
-<section id="fleet">
-<h2>Our Fleet</h2>
-<div class="cars">
+        <div class="car">
+            <img src="https://images.unsplash.com/photo-1583267746926-7e38a6e4d53c">
+            <h3>Category E – SUV</h3>
+            <p>From €24 / day</p>
+        </div>
 
-<div class="car-card">
-<img src="https://images.pexels.com/photos/5733711/pexels-photo-5733711.jpeg">
-<h3>Mini – Toyota Yaris</h3>
-<p>From €8/day</p>
-</div>
+        <div class="car">
+            <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888">
+            <h3>Category F – 7 Seater</h3>
+            <p>From €28 / day</p>
+        </div>
 
-<div class="car-card">
-<img src="https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg">
-<h3>Compact – Toyota Corolla</h3>
-<p>From €12/day</p>
-</div>
+        <div class="car">
+            <img src="https://images.unsplash.com/photo-1621011822270-7f3e3e8c8c5c">
+            <h3>Category G – 9 Seater</h3>
+            <p>From €32 / day</p>
+        </div>
 
-<div class="car-card">
-<img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg">
-<h3>SUV – Nissan Qashqai</h3>
-<p>From €16/day</p>
-</div>
-
-<div class="car-card">
-<img src="https://images.pexels.com/photos/907483/pexels-photo-907483.jpeg">
-<h3>Family Van – 7 Seater</h3>
-<p>From €20/day</p>
-</div>
-
-<div class="car-card">
-<img src="https://images.pexels.com/photos/11491397/pexels-photo-11491397.jpeg">
-<h3>9 Seater – Passenger Van</h3>
-<p>From €24/day</p>
-</div>
-
-</div>
+    </div>
 </section>
 
-<!-- EXPLORE MALTA -->
-<section id="explore">
-<h2>Explore Malta</h2>
-<div class="cars">
+<section>
+    <h2>Where To Go In Malta</h2>
+    <div class="places">
 
-<div class="car-card">
-<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c">
-<h3>Valletta</h3>
-<a href="https://www.google.com/maps?q=Valletta+Malta" target="_blank">View Location</a>
-</div>
+        <div class="place">
+            <img src="https://images.unsplash.com/photo-1589395937772-f6707a4b9e07">
+            <h3>Valletta</h3>
+            <a href="https://www.google.com/maps/place/Valletta" target="_blank">Open in Google Maps</a>
+        </div>
 
-<div class="car-card">
-<img src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f">
-<h3>Mdina</h3>
-<a href="https://www.google.com/maps?q=Mdina+Malta" target="_blank">View Location</a>
-</div>
+        <div class="place">
+            <img src="https://images.unsplash.com/photo-1583430998593-5f7f0a1d3e41">
+            <h3>Mdina</h3>
+            <a href="https://www.google.com/maps/place/Mdina" target="_blank">Open in Google Maps</a>
+        </div>
 
-<div class="car-card">
-<img src="https://images.unsplash.com/photo-1583406758598-0b4a0d7b2e7d">
-<h3>Golden Bay</h3>
-<a href="https://www.google.com/maps?q=Golden+Bay+Malta" target="_blank">View Location</a>
-</div>
+        <div class="place">
+            <img src="https://images.unsplash.com/photo-1595332278747-5e2b4df43259">
+            <h3>Blue Lagoon – Comino</h3>
+            <a href="https://www.google.com/maps/place/Blue+Lagoon+Comino" target="_blank">Open in Google Maps</a>
+        </div>
 
-<div class="car-card">
-<img src="https://images.unsplash.com/photo-1601042879364-f3947d3f9c16">
-<h3>Sliema</h3>
-<a href="https://www.google.com/maps?q=Sliema+Malta" target="_blank">View Location</a>
-</div>
+        <div class="place">
+            <img src="https://images.unsplash.com/photo-1583430998608-4e11d7f07d5d">
+            <h3>Dingli Cliffs</h3>
+            <a href="https://www.google.com/maps/place/Dingli+Cliffs" target="_blank">Open in Google Maps</a>
+        </div>
 
-</div>
+        <div class="place">
+            <img src="https://images.unsplash.com/photo-1615884690994-9df6e4e2d653">
+            <h3>Golden Bay</h3>
+            <a href="https://www.google.com/maps/place/Golden+Bay+Malta" target="_blank">Open in Google Maps</a>
+        </div>
+
+    </div>
 </section>
 
 <footer>
-© 2026 EZ Car Rental Malta • Always Available • WhatsApp Booking
+    <p>Quick Car Rental – Malta</p>
+    <p>We Are Always Available ✔</p>
 </footer>
-
-<script>
-function sendToWhatsApp(){
-  let message = "Hello, I want to check availability for EZ Car Rental Malta.";
-  window.open("https://wa.me/356YOURNUMBER?text=" + encodeURIComponent(message), "_blank");
-}
-</script>
 
 </body>
 </html>
