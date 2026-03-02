@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Quick Rental Malta</title>
+<title>Quick Rental Malta | Luxury Car Hire</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -9,11 +9,12 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family: 'Segoe UI', sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#111;
+background: radial-gradient(circle at top, #111 0%, #000 60%);
 color:white;
 }
 
@@ -24,140 +25,135 @@ color:white;
 
 /* HEADER */
 header{
-background:#000;
 text-align:center;
-padding:25px;
-border-bottom:2px solid var(--gold);
+padding:70px 20px;
+border-bottom:1px solid rgba(212,175,55,0.3);
 }
 
 header h1{
-font-size:38px;
+font-size:55px;
+letter-spacing:8px;
 color:var(--gold);
-letter-spacing:2px;
+animation:glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 10px rgba(212,175,55,0.4);}
+to{ text-shadow:0 0 30px rgba(212,175,55,0.9);}
 }
 
 header p{
-margin-top:8px;
-color:#ccc;
+color:#aaa;
+margin-top:15px;
+font-size:14px;
+letter-spacing:2px;
 }
 
 /* HERO */
 .hero{
-height:85vh;
-background:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
 text-align:center;
-font-size:50px;
-font-weight:bold;
-text-shadow:2px 2px 20px black;
+padding:60px 20px;
 }
 
-/* SECTION */
-.section{
-max-width:1200px;
-margin:auto;
-padding:70px 20px;
-text-align:center;
+.hero h2{
+font-size:28px;
+color:#ddd;
+font-weight:300;
 }
 
-.section h2{
-color:var(--gold);
-margin-bottom:40px;
-font-size:30px;
-}
-
-/* CARS */
-.cars{
+/* FLEET */
+.fleet{
+max-width:1100px;
+margin:60px auto;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:0 20px;
 }
 
-.car{
-background:#1a1a1a;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,0.6);
-transition:0.3s;
-border:1px solid #222;
+.car-card{
+background:linear-gradient(145deg,#111,#0a0a0a);
+padding:25px;
+border-radius:15px;
+border:1px solid rgba(212,175,55,0.1);
+transition:0.4s;
+text-align:center;
 }
 
-.car:hover{
+.car-card:hover{
 transform:translateY(-8px);
+border-color:var(--gold);
+box-shadow:0 0 25px rgba(212,175,55,0.2);
 }
 
-.car img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
-
-.car-content{
-padding:20px;
+.car-card h3{
+color:white;
+margin-bottom:10px;
 }
 
 .price{
 color:var(--gold);
-margin:10px 0;
 font-weight:bold;
+}
+
+/* BOOKING SECTION */
+.booking{
+max-width:750px;
+margin:80px auto;
+background:#0a0a0a;
+padding:40px;
+border-radius:20px;
+box-shadow:0 0 50px rgba(212,175,55,0.15);
+}
+
+.booking h2{
+text-align:center;
+color:var(--gold);
+margin-bottom:30px;
+letter-spacing:2px;
+}
+
+select,input{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+background:#111;
+border:1px solid #222;
+border-radius:8px;
+color:white;
 }
 
 button{
-background:var(--gold);
-color:black;
-border:none;
-padding:12px 28px;
-border-radius:6px;
-cursor:pointer;
-font-weight:bold;
-}
-
-/* BOOKING FORM */
-form{
-max-width:600px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-input, select{
-padding:12px;
-border:none;
-border-radius:6px;
-}
-
-/* MAP */
-iframe{
 width:100%;
-height:400px;
-border:0;
-border-radius:12px;
+padding:15px;
+background:var(--gold);
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+.result{
+margin-top:20px;
+text-align:center;
+font-size:18px;
+color:var(--gold);
+line-height:1.6;
 }
 
 /* FOOTER */
 footer{
-background:#000;
 text-align:center;
-padding:25px;
-border-top:2px solid var(--gold);
-margin-top:60px;
-}
-
-/* WHATSAPP BUTTON */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px 18px;
-border-radius:50px;
-font-weight:bold;
-text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.5);
+padding:50px 20px;
+border-top:1px solid rgba(212,175,55,0.3);
+color:#777;
+margin-top:100px;
+font-size:14px;
 }
 </style>
 </head>
@@ -165,85 +161,114 @@ box-shadow:0 5px 15px rgba(0,0,0,0.5);
 <body>
 
 <header>
-<h1>Quick Rental</h1>
-<p>Luxury Car Hire – Airport Pickup or Delivery Malta & Gozo</p>
+<h1>QUICK RENTAL</h1>
+<p>Airport Pickup • Delivery Malta & Gozo • +356 7703 8260</p>
 </header>
 
-<div class="hero">
-Drive Malta With Style
-</div>
+<section class="hero">
+<h2>Luxury Car Hire Experience in Malta</h2>
+</section>
 
-<div class="section">
-<h2>Our Cars</h2>
+<section class="fleet">
+<div class="car-card"><h3>Toyota Aygo</h3><div class="price">€25/day</div></div>
+<div class="car-card"><h3>Toyota Yaris</h3><div class="price">€30/day</div></div>
+<div class="car-card"><h3>VW Polo</h3><div class="price">€35/day</div></div>
+<div class="car-card"><h3>Nissan Qashqai</h3><div class="price">€45/day</div></div>
+<div class="car-card"><h3>Peugeot 5008</h3><div class="price">€55/day</div></div>
+<div class="car-card"><h3>BMW 3 Series</h3><div class="price">€90/day</div></div>
+<div class="car-card"><h3>Mercedes C Class</h3><div class="price">€120/day</div></div>
+</section>
 
-<div class="cars">
+<section class="booking">
+<h2>BOOK YOUR VEHICLE</h2>
 
-<div class="car">
-<img src="https://images.unsplash.com/photo-1603386329225-868f9b1ee6b9">
-<div class="car-content">
-<h3>Toyota Aygo</h3>
-<p class="price">From €25/day</p>
-<button onclick="scrollToBooking()">Book Now</button>
-</div>
-</div>
-
-<div class="car">
-<img src="https://images.unsplash.com/photo-1549921296-3a6b7c3a8d8b">
-<div class="car-content">
-<h3>Toyota Yaris</h3>
-<p class="price">From €30/day</p>
-<button onclick="scrollToBooking()">Book Now</button>
-</div>
-</div>
-
-<div class="car">
-<img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d">
-<div class="car-content">
-<h3>Volkswagen Polo</h3>
-<p class="price">From €35/day</p>
-<button onclick="scrollToBooking()">Book Now</button>
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="section" id="booking">
-<h2>Book Your Car</h2>
-
-<form action="https://wa.me/35677038260" target="_blank">
-<input type="text" placeholder="Full Name" required>
-<input type="date" required>
-<input type="date" required>
-<select>
-<option>Airport Pickup</option>
-<option>Delivery Malta</option>
-<option>Delivery Gozo</option>
+<select id="car">
+<option value="25">Toyota Aygo – €25/day</option>
+<option value="30">Toyota Yaris – €30/day</option>
+<option value="35">VW Polo – €35/day</option>
+<option value="45">Nissan Qashqai – €45/day</option>
+<option value="55">Peugeot 5008 – €55/day</option>
+<option value="90">BMW 3 Series – €90/day</option>
+<option value="120">Mercedes C Class – €120/day</option>
 </select>
-<button type="submit">Send Booking Request</button>
-</form>
 
-</div>
+<input type="date" id="start">
+<input type="date" id="end">
+<input type="text" id="location" placeholder="Delivery Location (Airport / Hotel / Gozo)">
+<input type="text" id="name" placeholder="Your Name">
 
-<div class="section">
-<h2>Our Location</h2>
-<iframe 
-src="https://www.google.com/maps?q=Malta+International+Airport&output=embed">
-</iframe>
-</div>
+<button onclick="calculate()">Calculate Total</button>
+
+<div class="result" id="total"></div>
+
+<br>
+
+<button onclick="sendWhatsApp()">Book via WhatsApp</button>
+</section>
 
 <footer>
-© 2026 Quick Rental Malta | WhatsApp: +35677038260
+© 2026 Quick Rental Malta. All Rights Reserved.
 </footer>
 
-<a class="whatsapp" href="https://wa.me/35677038260" target="_blank">
-WhatsApp Us
-</a>
-
 <script>
-function scrollToBooking(){
-document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+
+let bookedDates=["2026-06-10","2026-06-11"];
+
+function calculate(){
+let carPrice=parseFloat(document.getElementById("car").value);
+let start=new Date(document.getElementById("start").value);
+let end=new Date(document.getElementById("end").value);
+let location=document.getElementById("location").value.toLowerCase();
+
+let startStr=document.getElementById("start").value;
+let endStr=document.getElementById("end").value;
+
+if(bookedDates.includes(startStr)||bookedDates.includes(endStr)){
+alert("Selected dates not available.");
+return;
 }
+
+let days=(end-start)/(1000*60*60*24);
+
+if(days>0){
+let rental=days*carPrice;
+
+/* Discount */
+if(days>=7){rental*=0.9;}
+
+/* Gozo fee */
+if(location.includes("gozo")){rental+=30;}
+
+let deposit=300;
+let total=rental+deposit;
+
+document.getElementById("total").innerHTML=
+"Rental: €"+rental.toFixed(2)+
+"<br>Deposit: €300"+
+"<br><strong>Total: €"+total.toFixed(2)+"</strong>";
+}else{
+document.getElementById("total").innerHTML="Please select valid dates.";
+}
+}
+
+function sendWhatsApp(){
+let car=document.getElementById("car").options[document.getElementById("car").selectedIndex].text;
+let start=document.getElementById("start").value;
+let end=document.getElementById("end").value;
+let location=document.getElementById("location").value;
+let name=document.getElementById("name").value;
+let summary=document.getElementById("total").innerText;
+
+let message="Hello Quick Rental,%0A%0A"+
+"Name: "+name+"%0A"+
+"Car: "+car+"%0A"+
+"Dates: "+start+" to "+end+"%0A"+
+"Location: "+location+"%0A%0A"+
+summary;
+
+window.open("https://wa.me/35677038260?text="+message,"_blank");
+}
+
 </script>
 
 </body>
