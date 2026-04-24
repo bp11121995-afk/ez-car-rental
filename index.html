@@ -41,19 +41,44 @@ border-bottom:1px solid #222;
 
 h1{color:var(--gold);}
 
-/* INFO LINE */
 .info-line{
 text-align:center;
 color:#aaa;
 font-size:14px;
-margin-top:-10px;
 padding:0 15px;
+margin-top:-10px;
+}
+
+/* PLAN BUTTONS */
+.plan-buttons{
+display:flex;
+gap:10px;
+margin:20px auto;
+max-width:650px;
+padding:0 15px;
+}
+
+.plan-btn{
+flex:1;
+padding:12px;
+border:none;
+cursor:pointer;
+background:#111;
+color:#fff;
+border:1px solid #333;
+border-radius:8px;
+font-weight:bold;
+}
+
+.plan-btn.active{
+background:var(--gold);
+color:#000;
 }
 
 /* CARS */
 .cars{
 max-width:900px;
-margin:30px auto;
+margin:20px auto;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:15px;
@@ -82,29 +107,6 @@ margin:40px auto;
 padding:20px;
 background:rgba(17,17,17,0.9);
 border-radius:10px;
-}
-
-.plan-buttons{
-display:flex;
-gap:10px;
-margin-bottom:15px;
-}
-
-.plan-btn{
-flex:1;
-padding:12px;
-border:none;
-cursor:pointer;
-background:#111;
-color:#fff;
-border:1px solid #333;
-border-radius:8px;
-font-weight:bold;
-}
-
-.plan-btn.active{
-background:var(--gold);
-color:#000;
 }
 
 input,select{
@@ -138,7 +140,7 @@ line-height:1.6;
 
 <body>
 
-<!-- VIDEO BACKGROUND -->
+<!-- BACKGROUND VIDEO -->
 <video autoplay muted loop playsinline id="bgVideo">
 <source src="https://cdn.coverr.co/videos/coverr-driving-through-a-tunnel-1578/1080p.mp4" type="video/mp4">
 </video>
@@ -149,10 +151,16 @@ line-height:1.6;
 <h1>QUICK RENTAL MALTA</h1>
 </header>
 
-<!-- 🔥 NEW INFO LINE -->
 <p class="info-line">
-🚗 Delivery across Malta & Gozo • Hassle-free rental experience • We bring the car to your location
+🚗 Delivery Malta & Gozo • Hassle-free rental • We bring the car to your location
 </p>
+
+<!-- PLAN SELECT -->
+<div class="plan-buttons">
+<button class="plan-btn" id="pbtn1" onclick="setPlan(1)">Option 1</button>
+<button class="plan-btn" id="pbtn2" onclick="setPlan(2)">Option 2</button>
+<button class="plan-btn" id="pbtn3" onclick="setPlan(3)">Option 3</button>
+</div>
 
 <!-- CARS -->
 <div class="cars">
@@ -166,13 +174,6 @@ line-height:1.6;
 
 <!-- BOOKING -->
 <div class="booking">
-
-<!-- PLAN BUTTONS -->
-<div class="plan-buttons">
-<button class="plan-btn" id="pbtn1" onclick="setPlan(1)">Option 1</button>
-<button class="plan-btn" id="pbtn2" onclick="setPlan(2)">Option 2</button>
-<button class="plan-btn" id="pbtn3" onclick="setPlan(3)">Option 3</button>
-</div>
 
 <input id="name" placeholder="Full Name">
 
@@ -204,7 +205,7 @@ line-height:1.6;
 let plan=null;
 let prices=[];
 
-/* PLAN */
+/* PLAN SYSTEM */
 function setPlan(p){
 plan=p;
 
@@ -216,18 +217,19 @@ if(p==1) document.getElementById("pbtn1").classList.add("active");
 if(p==2) document.getElementById("pbtn2").classList.add("active");
 if(p==3) document.getElementById("pbtn3").classList.add("active");
 
+/* PRICE LADDER */
 let start=4;
-if(p==2) start=11;
-if(p==3) start=25;
+if(plan==2) start=9;
+if(plan==3) start=14;
 
 prices=[];
 for(let i=0;i<4;i++){
-prices[i]=start;
+prices[i]=start + (i*5);
 document.getElementById("c"+i).innerText="€"+prices[i]+"/day";
 }
 }
 
-/* CALC */
+/* CALCULATE */
 function calc(){
 
 if(!plan){
@@ -263,7 +265,7 @@ document.getElementById("result").innerHTML =
 function whatsapp(){
 
 if(!plan){
-alert("Select a plan first");
+alert("Please select a plan first");
 return;
 }
 
