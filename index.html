@@ -51,28 +51,29 @@ border-radius:12px;
 
 .plan h3{
 color:var(--gold);
-margin-bottom:5px;
 }
 
 .plan p{
 color:#ccc;
 font-size:14px;
-}
-
-.plan .note{
-color:#aaa;
-font-size:12px;
 margin-top:5px;
 }
 
-.plan button{
-margin-top:10px;
+.buttons{
+display:flex;
+gap:10px;
+justify-content:center;
+margin-top:12px;
+flex-wrap:wrap;
+}
+
+.buttons button{
 padding:10px;
-width:60%;
 background:var(--gold);
 border:none;
 font-weight:bold;
 cursor:pointer;
+width:45%;
 }
 
 /* CARS */
@@ -114,9 +115,10 @@ margin:8px 0;
 background:#111;
 border:1px solid #222;
 color:white;
+border-radius:8px;
 }
 
-button{
+button.main{
 width:100%;
 padding:12px;
 background:var(--gold);
@@ -137,6 +139,12 @@ text-align:center;
 .insurance h2{
 color:var(--gold);
 margin-bottom:10px;
+}
+
+.note{
+color:#aaa;
+font-size:13px;
+margin-bottom:20px;
 }
 
 .ins-box{
@@ -169,23 +177,6 @@ font-weight:bold;
 border-radius:6px;
 }
 
-/* GOOGLE */
-.google{
-max-width:900px;
-margin:60px auto;
-text-align:center;
-}
-
-.google a{
-display:inline-block;
-padding:12px 20px;
-background:var(--gold);
-color:black;
-text-decoration:none;
-font-weight:bold;
-border-radius:8px;
-}
-
 </style>
 </head>
 
@@ -193,7 +184,7 @@ border-radius:8px;
 
 <header>
 <h1>QUICK RENTAL MALTA</h1>
-<p>Simple • Fast • Trusted Car Rental</p>
+<p>Book your car → then choose protection if needed</p>
 </header>
 
 <!-- PLANS -->
@@ -202,22 +193,31 @@ border-radius:8px;
 <div class="plan">
 <h3>🟢 Option 1</h3>
 <p>Deposit €1200 / Excess €1200</p>
-<p class="note">Recommended: Protect your deposit with full cover insurance</p>
-<button onclick="scrollToInsurance()">View Protection Options</button>
+<p class="note">Best protection recommended for high-end security</p>
+<div class="buttons">
+<button onclick="setPlan(1)">Select Plan</button>
+<button onclick="goInsurance()">Get Insurance</button>
+</div>
 </div>
 
 <div class="plan">
 <h3>🟡 Option 2</h3>
 <p>Deposit €600 / Excess €600</p>
-<p class="note">Balanced protection recommended</p>
-<button onclick="scrollToInsurance()">View Protection Options</button>
+<p class="note">Balanced protection for most customers</p>
+<div class="buttons">
+<button onclick="setPlan(2)">Select Plan</button>
+<button onclick="goInsurance()">Get Insurance</button>
+</div>
 </div>
 
 <div class="plan">
 <h3>🔴 Option 3</h3>
 <p>Deposit €300 / Excess €300</p>
-<p class="note">Best low upfront option</p>
-<button onclick="scrollToInsurance()">View Protection Options</button>
+<p class="note">Low upfront cost option</p>
+<div class="buttons">
+<button onclick="setPlan(3)">Select Plan</button>
+<button onclick="goInsurance()">Get Insurance</button>
+</div>
 </div>
 
 </section>
@@ -225,25 +225,12 @@ border-radius:8px;
 <!-- CARS -->
 <section class="fleet">
 
-<div class="car">
-<h3>Toyota Aygo</h3>
-<div class="price">€25/day</div>
-</div>
-
-<div class="car">
-<h3>Toyota Yaris</h3>
-<div class="price">€30/day</div>
-</div>
-
-<div class="car">
-<h3>VW Polo</h3>
-<div class="price">€35/day</div>
-</div>
-
-<div class="car">
-<h3>Nissan Qashqai</h3>
-<div class="price">€45/day</div>
-</div>
+<div class="car"><h3>Toyota Aygo</h3><div class="price" id="c0">€25/day</div></div>
+<div class="car"><h3>Toyota Yaris</h3><div class="price" id="c1">€30/day</div></div>
+<div class="car"><h3>VW Polo</h3><div class="price" id="c2">€35/day</div></div>
+<div class="car"><h3>Nissan Qashqai</h3><div class="price" id="c3">€45/day</div></div>
+<div class="car"><h3>Peugeot 5008</h3><div class="price" id="c4">€55/day</div></div>
+<div class="car"><h3>BMW 3 Series</h3><div class="price" id="c5">€90/day</div></div>
 
 </section>
 
@@ -263,7 +250,7 @@ border-radius:8px;
 <option>Nissan Qashqai</option>
 </select>
 
-<button>Send Booking via WhatsApp</button>
+<button class="main">Send Booking via WhatsApp</button>
 
 </section>
 
@@ -272,32 +259,53 @@ border-radius:8px;
 
 <h2>🛡️ Trusted Excess Insurance Partners</h2>
 
+<p class="note">
+Important: First book your car, then choose a protection package
+</p>
+
 <div class="ins-box">
 <h3>:contentReference[oaicite:2]{index=2}</h3>
-<p>€5–€12/day average • Strong UK reputation</p>
-<a href="https://www.carhireexcess.co.uk/?variant=2" target="_blank">Visit Website</a>
+<p>Global leader in excess refund insurance</p>
+<p>Highly trusted worldwide with strong customer reputation and fast claims process</p>
+<a href="https://www.rentalcover.com" target="_blank">Visit Website</a>
 </div>
 
 <div class="ins-box">
 <h3>:contentReference[oaicite:3]{index=3}</h3>
-<p>€6–€15/day average • Global leader in excess refund insurance</p>
-<a href="https://www.rentalcover.com" target="_blank">Visit Website</a>
+<p>UK specialist in car hire excess insurance</p>
+<p>Well known for reliable service and strong UK/EU reputation</p>
+<a href="https://www.carhireexcess.co.uk/?variant=2" target="_blank">Visit Website</a>
 </div>
-
-</section>
-
-<!-- GOOGLE REVIEWS -->
-<section class="google">
-
-<h2>⭐ Google Reviews</h2>
-
-<a href="#" target="_blank">Read Our Google Reviews</a>
 
 </section>
 
 <script>
 
-function scrollToInsurance(){
+let plan = 1;
+let prices = [];
+
+function setPlan(p){
+plan = p;
+
+let start = 25;
+
+if(plan == 1) start = 4;
+if(plan == 2) start = 11;
+if(plan == 3) start = 25;
+
+prices = [];
+
+for(let i=0;i<6;i++){
+prices[i] = start + (i*5);
+}
+
+for(let i=0;i<6;i++){
+document.getElementById("c"+i).innerText =
+"€"+prices[i]+"/day";
+}
+}
+
+function goInsurance(){
 document.getElementById("insurance").scrollIntoView({behavior:"smooth"});
 }
 
