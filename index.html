@@ -25,233 +25,166 @@ color:white;
 /* HEADER */
 header{
 text-align:center;
-padding:70px 20px;
+padding:60px 20px;
 border-bottom:1px solid rgba(212,175,55,0.3);
 }
 
 header h1{
-font-size:55px;
-letter-spacing:8px;
+font-size:50px;
 color:var(--gold);
-animation:glow 3s ease-in-out infinite alternate;
-}
-
-@keyframes glow{
-from{text-shadow:0 0 10px rgba(212,175,55,0.4);}
-to{text-shadow:0 0 30px rgba(212,175,55,0.9);}
-}
-
-header p{
-color:#aaa;
-margin-top:15px;
-font-size:14px;
-letter-spacing:2px;
-}
-
-header a{
-color:var(--gold);
-text-decoration:none;
-}
-
-/* FLEET */
-.fleet{
-max-width:1100px;
-margin:60px auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-padding:0 20px;
-}
-
-.car-card{
-background:linear-gradient(145deg,#111,#0a0a0a);
-padding:25px;
-border-radius:15px;
-border:1px solid rgba(212,175,55,0.1);
-transition:0.4s;
-text-align:center;
-}
-
-.car-card:hover{
-transform:translateY(-8px);
-border-color:var(--gold);
-box-shadow:0 0 25px rgba(212,175,55,0.2);
-}
-
-.car-card h3{
-color:white;
-margin-bottom:10px;
-}
-
-.price{
-color:var(--gold);
-font-weight:bold;
+letter-spacing:4px;
 }
 
 /* PLANS */
 .plans{
 max-width:900px;
-margin:60px auto;
-padding:20px;
+margin:40px auto;
 text-align:center;
+padding:20px;
 }
 
 .plan{
 background:#0a0a0a;
+padding:20px;
+margin:10px 0;
+border-radius:12px;
 border:1px solid #222;
-padding:25px;
-margin:15px 0;
-border-radius:15px;
-transition:0.3s;
-}
-
-.plan:hover{
-transform:scale(1.02);
-border-color:var(--gold);
-}
-
-.plan h3{
-color:var(--gold);
-margin-bottom:10px;
 }
 
 .plan button{
-margin-top:15px;
-padding:12px;
+margin-top:10px;
+padding:10px;
 width:60%;
-border:none;
 background:var(--gold);
-font-weight:bold;
+border:none;
 cursor:pointer;
-border-radius:8px;
+font-weight:bold;
 }
 
-.popular{
-border:1px solid var(--gold);
-box-shadow:0 0 20px rgba(212,175,55,0.2);
+/* CARS */
+.fleet{
+max-width:1100px;
+margin:50px auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:0 20px;
 }
 
-/* BOOKING */
-.booking{
-max-width:750px;
-margin:80px auto;
+.car-card{
 background:#0a0a0a;
-padding:40px;
-border-radius:20px;
-box-shadow:0 0 50px rgba(212,175,55,0.15);
-}
-
-.booking h2{
-text-align:center;
-color:var(--gold);
-margin-bottom:30px;
-letter-spacing:2px;
-}
-
-select,input{
-width:100%;
-padding:14px;
-margin-bottom:15px;
-background:#111;
+padding:20px;
+border-radius:12px;
 border:1px solid #222;
-border-radius:8px;
-color:white;
-}
-
-button{
-width:100%;
-padding:15px;
-background:var(--gold);
-border:none;
-border-radius:8px;
-font-weight:bold;
-cursor:pointer;
-font-size:16px;
-}
-
-button:hover{
-opacity:0.9;
-}
-
-.result{
-margin-top:20px;
 text-align:center;
-font-size:18px;
-line-height:1.8;
 }
 
-.result .rental{color:var(--gold);}
-.result .deposit{color:#ccc;}
-.result .total{
+.price{
 color:var(--gold);
-font-size:20px;
 font-weight:bold;
 margin-top:10px;
 }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:50px 20px;
-border-top:1px solid rgba(212,175,55,0.3);
-color:#777;
-margin-top:100px;
-font-size:14px;
+/* BOOKING */
+.booking{
+max-width:700px;
+margin:60px auto;
+background:#0a0a0a;
+padding:30px;
+border-radius:15px;
 }
 
-footer a{
-color:var(--gold);
-text-decoration:none;
+input,select{
+width:100%;
+padding:12px;
+margin:8px 0;
+background:#111;
+border:1px solid #222;
+color:white;
+border-radius:8px;
 }
+
+button{
+width:100%;
+padding:12px;
+background:var(--gold);
+border:none;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+}
+
+.result{
+margin-top:15px;
+text-align:center;
+color:white;
+line-height:1.8;
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>QUICK RENTAL</h1>
-<p>From €4/day • Airport Pickup • Malta & Gozo • +356 7703 8260<br>
-Email: <a href="mailto:bp11121995@gmail.com">bp11121995@gmail.com</a></p>
+<h1>QUICK RENTAL MALTA</h1>
+<p>Select plan first → prices update automatically</p>
 </header>
-
-<!-- CARS -->
-<section class="fleet">
-<div class="car-card"><h3>Toyota Aygo</h3><div class="price">€25/day</div></div>
-<div class="car-card"><h3>Toyota Yaris</h3><div class="price">€30/day</div></div>
-<div class="car-card"><h3>VW Polo</h3><div class="price">€35/day</div></div>
-<div class="car-card"><h3>Nissan Qashqai</h3><div class="price">€45/day</div></div>
-<div class="car-card"><h3>Peugeot 5008</h3><div class="price">€55/day</div></div>
-<div class="car-card"><h3>BMW 3 Series</h3><div class="price">€90/day</div></div>
-<div class="car-card"><h3>Mercedes C Class</h3><div class="price">€120/day</div></div>
-</section>
 
 <!-- PLANS -->
 <section class="plans">
 
-<h2>CHOOSE YOUR PLAN</h2>
-
 <div class="plan">
-<h3>🟢 Option 1 - Budget</h3>
-<p><b>Deposit:</b> €1200</p>
-<p><b>Excess:</b> €1200</p>
-<p><b>From:</b> €4/day</p>
-<button onclick="selectPlan('Budget','1200','1200','4')">Select Plan</button>
-</div>
-
-<div class="plan popular">
-<h3>🟡 Option 2 - Standard</h3>
-<p><b>Deposit:</b> €600</p>
-<p><b>Excess:</b> €600</p>
-<p><b>From:</b> €12/day</p>
-<button onclick="selectPlan('Standard','600','600','12')">Select Plan</button>
+<h3>🟢 Option 1</h3>
+<p>Deposit €1200 / Excess €1200</p>
+<button onclick="setPlan(1)">Select Plan</button>
 </div>
 
 <div class="plan">
-<h3>🔴 Option 3 - Low Deposit</h3>
-<p><b>Deposit:</b> €300</p>
-<p><b>Excess:</b> €300</p>
-<p><b>From:</b> €??/day</p>
-<button onclick="selectPlan('Low Deposit','300','300','??')">Select Plan</button>
+<h3>🟡 Option 2</h3>
+<p>Deposit €600 / Excess €600</p>
+<button onclick="setPlan(2)">Select Plan</button>
+</div>
+
+<div class="plan">
+<h3>🔴 Option 3</h3>
+<p>Deposit €300 / Excess €300 (Dynamic pricing)</p>
+<button onclick="setPlan(3)">Select Plan</button>
+</div>
+
+</section>
+
+<!-- CARS -->
+<section class="fleet">
+
+<div class="car-card">
+<h3>Toyota Aygo</h3>
+<div class="price" id="c0">€25/day</div>
+</div>
+
+<div class="car-card">
+<h3>Toyota Yaris</h3>
+<div class="price" id="c1">€30/day</div>
+</div>
+
+<div class="car-card">
+<h3>VW Polo</h3>
+<div class="price" id="c2">€35/day</div>
+</div>
+
+<div class="car-card">
+<h3>Nissan Qashqai</h3>
+<div class="price" id="c3">€45/day</div>
+</div>
+
+<div class="car-card">
+<h3>Peugeot 5008</h3>
+<div class="price" id="c4">€55/day</div>
+</div>
+
+<div class="car-card">
+<h3>BMW 3 Series</h3>
+<div class="price" id="c5">€90/day</div>
 </div>
 
 </section>
@@ -259,26 +192,24 @@ Email: <a href="mailto:bp11121995@gmail.com">bp11121995@gmail.com</a></p>
 <!-- BOOKING -->
 <section class="booking">
 
-<h2>BOOK YOUR VEHICLE</h2>
+<h2>BOOK NOW</h2>
 
 <select id="car">
-<option value="25">Toyota Aygo – €25/day</option>
-<option value="30">Toyota Yaris – €30/day</option>
-<option value="35">VW Polo – €35/day</option>
-<option value="45">Nissan Qashqai – €45/day</option>
-<option value="55">Peugeot 5008 – €55/day</option>
-<option value="90">BMW 3 Series – €90/day</option>
-<option value="120">Mercedes C Class – €120/day</option>
+<option value="0">Toyota Aygo</option>
+<option value="1">Toyota Yaris</option>
+<option value="2">VW Polo</option>
+<option value="3">Nissan Qashqai</option>
+<option value="4">Peugeot 5008</option>
+<option value="5">BMW 3 Series</option>
 </select>
 
 <input type="date" id="start">
 <input type="date" id="end">
-<input type="text" id="location" placeholder="Delivery Location">
 <input type="text" id="name" placeholder="Your Name">
 
-<button onclick="calculate()">Calculate Total</button>
+<button onclick="calculate()">Calculate</button>
 
-<div class="result" id="total"></div>
+<div class="result" id="result"></div>
 
 <br>
 
@@ -286,76 +217,77 @@ Email: <a href="mailto:bp11121995@gmail.com">bp11121995@gmail.com</a></p>
 
 </section>
 
-<footer>
-© 2026 Quick Rental Malta<br>
-<a href="mailto:bp11121995@gmail.com">bp11121995@gmail.com</a>
-</footer>
-
 <script>
 
-let bookedDates=["2026-06-10","2026-06-11"];
-let selectedPlan="";
+let plan = 1;
 
-function selectPlan(name,deposit,excess,price){
+// base prices
+let basePrices = [25,30,35,45,55,90];
+let currentPrices = [...basePrices];
 
-selectedPlan=
-"Plan: "+name+"%0A"+
-"Deposit: €"+deposit+"%0A"+
-"Excess: €"+excess+"%0A"+
-"From: €"+price+"/day";
+function setPlan(p){
+plan = p;
 
-alert("Selected: "+name);
+// reset prices
+currentPrices = [...basePrices];
+
+if(plan == 3){
+for(let i=0;i<currentPrices.length;i++){
+currentPrices[i] = 25 + (i * 5);
+}
+}
+
+// update UI
+for(let i=0;i<currentPrices.length;i++){
+document.getElementById("c"+i).innerText = "€"+currentPrices[i]+"/day";
+}
+
+alert("Plan selected!");
 }
 
 function calculate(){
 
-let carPrice=parseFloat(document.getElementById("car").value);
-let start=new Date(document.getElementById("start").value);
-let end=new Date(document.getElementById("end").value);
+let car = document.getElementById("car").value;
+let start = new Date(document.getElementById("start").value);
+let end = new Date(document.getElementById("end").value);
 
-let startStr=document.getElementById("start").value;
-let endStr=document.getElementById("end").value;
+let days = (end - start)/(1000*60*60*24);
 
-if(bookedDates.includes(startStr)||bookedDates.includes(endStr)){
-alert("Not available");
+if(days <= 0){
+document.getElementById("result").innerText = "Select valid dates";
 return;
 }
 
-let days=(end-start)/(1000*60*60*24);
+let price = currentPrices[car];
+let total = price * days;
 
-if(days>0){
-
-let rental=days*carPrice;
-if(days>=7){rental*=0.9;}
-
-let deposit=300;
-let total=rental+deposit;
-
-document.getElementById("total").innerHTML=
-"Rental: €"+rental.toFixed(2)+"<br>"+
-"Deposit: €"+deposit+"<br>"+
+document.getElementById("result").innerHTML =
+"Days: "+days+"<br>"+
+"Price/day: €"+price+"<br>"+
 "Total: €"+total.toFixed(2);
 
-}else{
-document.getElementById("total").innerHTML="Select valid dates";
-}
 }
 
 function sendWhatsApp(){
 
-let car=document.getElementById("car").options[document.getElementById("car").selectedIndex].text;
-let start=document.getElementById("start").value;
-let end=document.getElementById("end").value;
-let location=document.getElementById("location").value;
-let name=document.getElementById("name").value;
-let summary=document.getElementById("total").innerText;
+let car = document.getElementById("car").options[document.getElementById("car").selectedIndex].text;
+let start = document.getElementById("start").value;
+let end = document.getElementById("end").value;
+let name = document.getElementById("name").value;
+let summary = document.getElementById("result").innerText;
 
-let message="Hello Quick Rental,%0A%0A"+
+let planText = "";
+
+if(plan == 1) planText = "Option 1 (1200 deposit/excess)";
+if(plan == 2) planText = "Option 2 (600 deposit/excess)";
+if(plan == 3) planText = "Option 3 (300 deposit/excess)";
+
+let message =
+"Hello Quick Rental%0A%0A"+
 "Name: "+name+"%0A"+
 "Car: "+car+"%0A"+
 "Dates: "+start+" to "+end+"%0A"+
-"Location: "+location+"%0A%0A"+
-selectedPlan+"%0A%0A"+
+"Plan: "+planText+"%0A%0A"+
 summary;
 
 window.open("https://wa.me/35677038260?text="+message,"_blank");
