@@ -22,7 +22,6 @@ color:white;
 --gold:#d4af37;
 }
 
-/* HEADER */
 header{
 text-align:center;
 padding:60px 20px;
@@ -32,10 +31,9 @@ border-bottom:1px solid rgba(212,175,55,0.3);
 header h1{
 font-size:50px;
 color:var(--gold);
-letter-spacing:4px;
+letter-spacing:3px;
 }
 
-/* PLANS */
 .plans{
 max-width:900px;
 margin:40px auto;
@@ -61,7 +59,6 @@ cursor:pointer;
 font-weight:bold;
 }
 
-/* CARS */
 .fleet{
 max-width:1100px;
 margin:50px auto;
@@ -85,7 +82,6 @@ font-weight:bold;
 margin-top:10px;
 }
 
-/* BOOKING */
 .booking{
 max-width:700px;
 margin:60px auto;
@@ -117,7 +113,6 @@ margin-top:10px;
 .result{
 margin-top:15px;
 text-align:center;
-color:white;
 line-height:1.8;
 }
 
@@ -148,7 +143,7 @@ line-height:1.8;
 
 <div class="plan">
 <h3>🔴 Option 3</h3>
-<p>Deposit €300 / Excess €300 (Dynamic pricing)</p>
+<p>Deposit €300 / Excess €300</p>
 <button onclick="setPlan(3)">Select Plan</button>
 </div>
 
@@ -221,7 +216,6 @@ line-height:1.8;
 
 let plan = 1;
 
-// base prices
 let basePrices = [25,30,35,45,55,90];
 let currentPrices = [...basePrices];
 
@@ -231,6 +225,7 @@ plan = p;
 // reset prices
 currentPrices = [...basePrices];
 
+// OPTION 3 RULE
 if(plan == 3){
 for(let i=0;i<currentPrices.length;i++){
 currentPrices[i] = 25 + (i * 5);
@@ -239,10 +234,12 @@ currentPrices[i] = 25 + (i * 5);
 
 // update UI
 for(let i=0;i<currentPrices.length;i++){
-document.getElementById("c"+i).innerText = "€"+currentPrices[i]+"/day";
+document.getElementById("c"+i).innerText =
+"€"+currentPrices[i]+"/day";
 }
 
-alert("Plan selected!");
+document.getElementById("result").innerHTML =
+"✅ Plan selected: Option " + plan;
 }
 
 function calculate(){
@@ -262,10 +259,10 @@ let price = currentPrices[car];
 let total = price * days;
 
 document.getElementById("result").innerHTML =
+"Plan: "+plan+"<br>"+
 "Days: "+days+"<br>"+
 "Price/day: €"+price+"<br>"+
 "Total: €"+total.toFixed(2);
-
 }
 
 function sendWhatsApp(){
@@ -276,18 +273,12 @@ let end = document.getElementById("end").value;
 let name = document.getElementById("name").value;
 let summary = document.getElementById("result").innerText;
 
-let planText = "";
-
-if(plan == 1) planText = "Option 1 (1200 deposit/excess)";
-if(plan == 2) planText = "Option 2 (600 deposit/excess)";
-if(plan == 3) planText = "Option 3 (300 deposit/excess)";
-
 let message =
 "Hello Quick Rental%0A%0A"+
 "Name: "+name+"%0A"+
 "Car: "+car+"%0A"+
 "Dates: "+start+" to "+end+"%0A"+
-"Plan: "+planText+"%0A%0A"+
+"Plan: "+plan+"%0A%0A"+
 summary;
 
 window.open("https://wa.me/35677038260?text="+message,"_blank");
