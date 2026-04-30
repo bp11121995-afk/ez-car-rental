@@ -125,7 +125,7 @@ button{
 
     <select id="insurance">
       <option value="No Insurance">❌ No Insurance</option>
-      <option value="Insurance Included">🛡 Insurance Included (+€5/day)</option>
+      <option value="Insurance Included">🛡 Insurance Included (+€24/day)</option>
     </select>
 
     <input type="text" id="location" placeholder="Location (optional)">
@@ -149,15 +149,13 @@ button{
 <a class="whatsapp" href="https://wa.me/3560000000" target="_blank">WhatsApp</a>
 
 <script>
-const basePrice = 24;
-
-let cars=[
- {name:"Economy"},
- {name:"Compact"},
- {name:"Hatchback"},
- {name:"Sedan"},
- {name:"SUV"},
- {name:"Luxury"}
+const baseCars = [
+ {name:"Economy",price:6},
+ {name:"Compact",price:7},
+ {name:"Hatchback",price:8},
+ {name:"Sedan",price:9},
+ {name:"SUV",price:9},
+ {name:"Luxury",price:9}
 ];
 
 function getDays(){
@@ -174,42 +172,37 @@ function showCars(){
 
  let days=getDays();
  let insurance=document.getElementById('insurance').value;
- let insuranceCost = (insurance === "Insurance Included") ? 5 : 0;
-
- let pricePerDay = basePrice + insuranceCost;
- let minTotal = pricePerDay * days;
-
- document.getElementById('summary').innerHTML = 
- `📊 Summary: ${days} day(s) | ${insurance} | From €${pricePerDay}/day | Estimated total from €${minTotal}`;
+ let insuranceCost = (insurance === "Insurance Included") ? 24 : 0;
+ let type=document.getElementById('serviceType').value;
+ let loc=document.getElementById('location').value;
 
  let box=document.getElementById('cars');
  box.innerHTML="";
 
- cars.forEach(c=>{
+ let baseInfo = baseCars[0].price + insuranceCost;
+
+ document.getElementById('summary').innerHTML =
+ `📊 ${days} day(s) | ${type} | ${insurance}`;
+
+ baseCars.forEach(c=>{
+
+  let pricePerDay = c.price + insuranceCost;
   let total = pricePerDay * days;
 
   box.innerHTML += `
   <div class='car'>
     <h3>${c.name}</h3>
     <p class='price'>€${pricePerDay}/day</p>
-    <p><b>Total Price: €${total}</b></p>
-    <button onclick="book('${c.name}',${pricePerDay})">Book via WhatsApp</button>
+    <p><b>Total: €${total}</b></p>
+    <button onclick="book()">Book</button>
   </div>
   `;
  });
 }
 
-function book(car,price){
- let days=getDays();
- let insurance=document.getElementById('insurance').value;
- let type=document.getElementById('serviceType').value;
- let loc=document.getElementById('location').value;
-
- let total=days*price;
-
- let msg=`Booking:%0ACar: ${car}%0ADays: ${days}%0AService: ${type}%0AInsurance: ${insurance}%0ALocation: ${loc}%0ATotal Price: €${total}`;
-
- window.open(`https://wa.me/3560000000?text=${msg}`,'_blank');
+function book(){
+ // just open whatsapp chat (no message)
+ window.open("https://wa.me/3560000000","_blank");
 }
 </script>
 
