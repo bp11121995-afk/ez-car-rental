@@ -4,151 +4,125 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Quick Rental Malta | Car Hire Malta</title>
-<meta name="description" content="Affordable car rental in Malta. Airport delivery, no hidden fees. Book your car in minutes via WhatsApp.">
+<title>Quick Rental Malta | Cheap Car Hire Malta</title>
+<meta name="description" content="Cheap car rental Malta from €7/day. Airport delivery, no hidden fees. Book fast via WhatsApp.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ===== RESET ===== */
-* {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* BODY */
+body{
+font-family:'Poppins',sans-serif;
+background:#020617;
+color:#fff;
 }
 
-/* ===== BODY ===== */
-body {
-    font-family:'Poppins',sans-serif;
-    background:#020617;
-    color:#fff;
-    line-height:1.6;
+/* CONTAINER */
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
 }
 
-/* ===== CONTAINER ===== */
-.container {
-    max-width:1100px;
-    margin:auto;
-    padding:20px;
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
 }
 
-/* ===== HEADER ===== */
-header {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px;
+.logo{
+font-weight:700;
+font-size:22px;
 }
 
-/* ===== LOGO ===== */
-.logo {
-    font-weight:700;
-    font-size:22px;
+/* HERO */
+.hero{
+height:75vh;
+background:url('https://images.unsplash.com/photo-1598275277521-1885382d523c') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
-/* ===== NAV ===== */
-nav a {
-    margin-left:20px;
-    text-decoration:none;
-    color:white;
-    opacity:0.8;
+.hero-overlay{
+background:rgba(0,0,0,0.65);
+padding:80px 20px;
+text-align:center;
 }
 
-/* ===== HERO ===== */
-.hero {
-    position: relative;
-    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
-    height: 75vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.hero h1{
+font-size:44px;
+margin-bottom:10px;
 }
 
-.hero-overlay {
-    background: rgba(0,0,0,0.65);
-    width:100%;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
+/* BUTTON */
+.btn{
+background:#25D366;
+padding:15px 30px;
+border-radius:10px;
+color:white;
+text-decoration:none;
+display:inline-block;
+margin-top:20px;
+font-weight:600;
 }
 
-.hero h1 {
-    font-size:48px;
-    font-weight:700;
+/* SECTION */
+.section{
+margin:70px 0;
 }
 
-.hero p {
-    margin-top:10px;
-    opacity:0.9;
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-/* ===== BUTTON ===== */
-.btn {
-    background: linear-gradient(135deg,#25D366,#16a34a);
-    padding:15px 30px;
-    border-radius:10px;
-    color:white;
-    text-decoration:none;
-    display:inline-block;
-    margin-top:20px;
-    font-weight:600;
-    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+/* BACKGROUND CARD */
+.bg-card{
+height:200px;
+border-radius:15px;
+display:flex;
+align-items:flex-end;
+padding:15px;
+background-size:cover;
+background-position:center;
+position:relative;
 }
 
-/* ===== SECTION ===== */
-.section {
-    margin:70px 0;
+.bg-card::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.4);
+border-radius:15px;
 }
 
-/* ===== GRID ===== */
-.grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+.bg-content{
+position:relative;
+z-index:2;
 }
 
-/* ===== CARD ===== */
-.card {
-    background:#0f172a;
-    padding:20px;
-    border-radius:15px;
+/* FOOTER */
+.footer{
+text-align:center;
+padding:40px;
+opacity:0.7;
 }
 
-/* ===== IMAGE ===== */
-.car-img {
-    width:100%;
-    border-radius:10px;
-    margin-bottom:10px;
-}
-
-/* ===== LIST ===== */
-ul {
-    padding-left:20px;
-    margin-top:10px;
-}
-
-/* ===== FOOTER ===== */
-.footer {
-    text-align:center;
-    padding:40px;
-    opacity:0.7;
-}
-
-/* ===== FLOAT BUTTON ===== */
-.whatsapp {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    padding:15px;
-    border-radius:50%;
-    color:white;
-    text-decoration:none;
+.small{
+font-size:12px;
+opacity:0.6;
 }
 
 </style>
@@ -160,25 +134,18 @@ ul {
 <div class="logo">
 🚗 <span style="color:#22c55e;">Quick</span> Rental Malta
 </div>
-
-<nav>
-<a href="#cars">Cars</a>
-<a href="#guide">Guide</a>
-<a href="#faq">FAQ</a>
-<a href="#contact">Contact</a>
-</nav>
 </header>
 
 <!-- HERO -->
 <div class="hero">
 <div class="hero-overlay">
 
-<h1>Premium Car Rental in Malta</h1>
-<p>Travel with comfort • Discover at your own pace</p>
-<p>From €19/day • Airport Delivery ✈️ • No Hidden Fees</p>
+<h1>Explore Malta with Freedom</h1>
+<p>Drive through Valletta, beaches & hidden gems</p>
+<p><strong>From €7/day*</strong> • Airport Delivery ✈️</p>
 
 <a class="btn" href="https://wa.me/35677038260">
-Book Your Car Now
+Book Now
 </a>
 
 </div>
@@ -186,83 +153,110 @@ Book Your Car Now
 
 <div class="container">
 
-<!-- TRUST -->
+<!-- ECONOMY CARS -->
 <div class="section">
-<h2>⭐ Why Tourists Choose Us</h2>
-<div class="grid">
-<div class="card">✔ Airport pickup</div>
-<div class="card">✔ Fast service (2–5 min)</div>
-<div class="card">✔ No hidden fees</div>
-<div class="card">✔ WhatsApp support</div>
-</div>
-</div>
-
-<!-- CARS -->
-<div class="section" id="cars">
-<h2>🚘 Available Cars</h2>
+<h2>💸 Economy Cars (Best Value)</h2>
 
 <div class="grid">
 
-<div class="card">
-<img class="car-img" src="https://images.unsplash.com/photo-1549924231-f129b911e442">
-<h3>Fiat 500</h3>
-<p>Perfect for city driving</p>
-<p>€25/day</p>
-</div>
-
-<div class="card">
-<img class="car-img" src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d">
-<h3>Toyota Aygo</h3>
-<p>Fuel efficient & compact</p>
-<p>€23/day</p>
-</div>
-
-<div class="card">
-<img class="car-img" src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
-<h3>BMW 1 Series</h3>
-<p>Comfort & performance</p>
-<p>€55/day</p>
-</div>
-
+<div class="bg-card" style="background-image:url('https://images.unsplash.com/photo-1549924231-f129b911e442');">
+<div class="bg-content">
+<h3>Fiat Panda</h3>
+<p>From €7/day*</p>
 </div>
 </div>
 
-<!-- GUIDE -->
-<div class="section" id="guide">
-<h2>📍 Malta Travel Guide</h2>
-<p>Explore Malta freely by car. Discover hidden beaches, historic towns, and scenic coastal roads.</p>
+<div class="bg-card" style="background-image:url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d');">
+<div class="bg-content">
+<h3>Kia Picanto</h3>
+<p>From €9/day</p>
+</div>
 </div>
 
-<!-- DRIVING -->
+<div class="bg-card" style="background-image:url('https://images.unsplash.com/photo-1502877338535-766e1452684a');">
+<div class="bg-content">
+<h3>Hyundai i10</h3>
+<p>From €10/day</p>
+</div>
+</div>
+
+<div class="bg-card" style="background-image:url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7');">
+<div class="bg-content">
+<h3>Chevrolet Spark</h3>
+<p>From €8/day</p>
+</div>
+</div>
+
+</div>
+
+<p class="small">*Prices depend on season & availability</p>
+
+</div>
+
+<!-- MALTA HIGHLIGHTS -->
 <div class="section">
-<h2>🚦 Driving Tips</h2>
-<ul>
-<li>Drive on the left</li>
-<li>Roads can be narrow</li>
-<li>Watch for scooters</li>
-<li>Parking limited in cities</li>
-</ul>
+<h2>🌴 Malta Highlights</h2>
+<p class="small">Discover Malta at your own pace with your rental car</p>
+
+<div class="grid">
+
+<div class="bg-card" style="background-image:url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e');">
+<div class="bg-content">
+<h3>Blue Lagoon</h3>
+<p>Crystal clear water</p>
+</div>
 </div>
 
-<!-- FAQ -->
-<div class="section" id="faq">
-<h2>❓ FAQ</h2>
-<p><strong>Minimum age:</strong> 21</p>
-<p><strong>Deposit:</strong> €500–€1000</p>
-<p><strong>Insurance:</strong> Available</p>
+<div class="bg-card" style="background-image:url('https://images.unsplash.com/photo-1598275277521-1885382d523c');">
+<div class="bg-content">
+<h3>Valletta</h3>
+<p>Historic capital</p>
+</div>
+</div>
+
+<div class="bg-card" style="background-image:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092');">
+<div class="bg-content">
+<h3>Mdina</h3>
+<p>Silent city</p>
+</div>
+</div>
+
+<div class="bg-card" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');">
+<div class="bg-content">
+<h3>Golden Bay</h3>
+<p>Sunset beach</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- WHY US -->
+<div class="section">
+<h2>⭐ Why Choose Us</h2>
+
+<div class="grid">
+<div>✔ Cheapest prices in Malta</div>
+<div>✔ Fast WhatsApp booking</div>
+<div>✔ Airport delivery</div>
+<div>✔ No hidden fees</div>
+</div>
+
 </div>
 
 <!-- MAP -->
 <div class="section">
 <h2>📍 Find Us</h2>
+
 <iframe 
 src="https://www.google.com/maps?q=Quick+Car+Rental+Senglea+Malta&output=embed"
 width="100%" height="300">
 </iframe>
+
 </div>
 
 <!-- CONTACT -->
-<div class="section" id="contact">
+<div class="section">
 <h2>📞 Contact</h2>
 <p>WhatsApp: +356 7703 8260</p>
 </div>
@@ -271,10 +265,9 @@ width="100%" height="300">
 
 <!-- FOOTER -->
 <div class="footer">
-<p>© 2026 Quick Rental Malta • Founded 2026</p>
+<p>© 2026 Quick Rental Malta</p>
+<p class="small">Affordable car hire in Malta</p>
 </div>
-
-<a class="whatsapp" href="https://wa.me/35677038260">💬</a>
 
 </body>
 </html>
