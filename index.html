@@ -1,210 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Quick Car Rental</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EZ Car Rental Malta</title>
 
 <style>
-body{
-  font-family:Arial,sans-serif;
-  margin:0;
-  background:#0f0f0f;
-  color:#eee;
+body {
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f5f5f5;
 }
 
-header{
-  background:linear-gradient(90deg,#000,#222);
-  text-align:center;
-  padding:30px;
+header {
+    background:black;
+    color:white;
+    padding:20px;
+    text-align:center;
 }
 
-.logo{
-  font-size:34px;
-  font-weight:bold;
+.hero {
+    padding:40px 20px;
+    text-align:center;
+    background:white;
 }
 
-.tagline{color:#bbb;font-size:13px;margin-top:5px}
-.location{color:#888;font-size:12px}
-
-section{
-  max-width:1100px;
-  margin:20px auto;
-  background:#1a1a1a;
-  padding:20px;
-  border-radius:12px;
+.hero h1 {
+    font-size:32px;
+    margin-bottom:10px;
 }
 
-.booking-box input, .booking-box select{
-  padding:10px;
-  margin:5px;
-  border-radius:6px;
-  border:none;
+.hero p {
+    color:#555;
 }
 
-.cars{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
-  margin-top:20px;
+.btn {
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 22px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
 }
 
-.car{
-  background:#222;
-  padding:15px;
-  border-radius:10px;
-  text-align:center;
+.section {
+    padding:30px 20px;
+    max-width:1000px;
+    margin:auto;
 }
 
-.price{
-  color:#00ff88;
-  font-size:18px;
-  font-weight:bold;
+.cars {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    gap:20px;
 }
 
-.summary{
-  margin-top:10px;
-  padding:10px;
-  background:#111;
-  border-radius:8px;
-  font-size:14px;
-  color:#ccc;
+.car {
+    background:white;
+    border-radius:10px;
+    padding:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+    text-align:center;
 }
 
-button{
-  margin-top:10px;
-  padding:10px;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-  background:#00ff88;
-  color:#000;
-  font-weight:bold;
+.car img {
+    width:100%;
+    border-radius:8px;
 }
 
-.map{
-  width:100%;
-  height:300px;
-  border:0;
-  border-radius:10px;
+.footer {
+    text-align:center;
+    padding:20px;
+    background:black;
+    color:white;
+    margin-top:30px;
 }
 
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:15px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:bold;
+/* WhatsApp floating button */
+.whatsapp {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:14px 18px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 </style>
+
 </head>
 
 <body>
 
 <header>
-  <div class="logo">Quick Car Rental</div>
-  <div class="tagline">Fast • Cheap • Reliable</div>
-  <div class="location">📍 Senglea, Malta</div>
+<h2>EZ Car Rental Malta 🇲🇹</h2>
 </header>
 
-<section>
-  <h2>📅 Step 1: Choose Details</h2>
+<div class="hero">
+<h1>Affordable Car Rental in Malta</h1>
+<p>Fast booking via WhatsApp • No hassle • Great prices</p>
 
-  <div class="booking-box">
-    <input type="date" id="start">
-    <input type="date" id="end">
+<a class="btn" href="https://wa.me/35677038260?text=Hi%20I%20want%20to%20rent%20a%20car%20in%20Malta" target="_blank">
+Book on WhatsApp
+</a>
+</div>
 
-    <select id="serviceType">
-      <option value="Airport Pickup">✈ Airport Pickup</option>
-      <option value="Delivery">🚗 Delivery</option>
-    </select>
+<div class="section">
+<h2>Our Cars</h2>
 
-    <select id="insurance">
-      <option value="No Insurance">❌ No Insurance</option>
-      <option value="Insurance Included">🛡 Insurance Included (+€24/day)</option>
-    </select>
+<div class="cars">
 
-    <input type="text" id="location" placeholder="Location (optional)">
+<div class="car">
+<img src="https://via.placeholder.com/400x250" alt="">
+<h3>Toyota Vitz</h3>
+<p>From €25/day</p>
+</div>
 
-    <button onclick="showCars()">Show Cars</button>
+<div class="car">
+<img src="https://via.placeholder.com/400x250" alt="">
+<h3>Peugeot 108</h3>
+<p>From €30/day</p>
+</div>
 
-    <div class="summary" id="summary"></div>
-  </div>
-</section>
+<div class="car">
+<img src="https://via.placeholder.com/400x250" alt="">
+<h3>BMW 1 Series</h3>
+<p>From €60/day</p>
+</div>
 
-<section id="carsSection" style="display:none;">
-  <h2>🚗 Available Cars</h2>
-  <div class="cars" id="cars"></div>
-</section>
+</div>
+</div>
 
-<section>
-<h2>📍 Map</h2>
-<iframe class="map" src="https://www.google.com/maps?q=35.8880661,14.5171061&z=15&output=embed"></iframe>
-</section>
+<div class="section">
+<h2>Why Choose Us</h2>
+<ul>
+<li>✔️ Local Malta service</li>
+<li>✔️ No hidden fees</li>
+<li>✔️ Fast WhatsApp booking</li>
+<li>✔️ Flexible rental options</li>
+</ul>
+</div>
 
-<a class="whatsapp" href="https://wa.me/3560000000" target="_blank">WhatsApp</a>
+<div class="section">
+<h2>Book Your Car</h2>
+<p>Send us your dates and we reply fast.</p>
 
-<script>
-const baseCars = [
- {name:"Economy",price:6},
- {name:"Compact",price:7},
- {name:"Hatchback",price:8},
- {name:"Sedan",price:9},
- {name:"SUV",price:9},
- {name:"Luxury",price:9}
-];
+<a class="btn" href="https://wa.me/35677038260?text=Hi%20I%20need%20a%20car%20from%20[date]%20to%20[date]" target="_blank">
+Message Now
+</a>
+</div>
 
-function getDays(){
- let s=document.getElementById('start').value;
- let e=document.getElementById('end').value;
- if(!s||!e)return 1;
- let d1=new Date(s);
- let d2=new Date(e);
- return Math.max(1,(d2-d1)/(1000*60*60*24));
-}
+<div class="section">
+<h2>Contact</h2>
+<p>📍 Bugibba, Malta</p>
+<p>📞 +356 77038260</p>
+<p>💬 WhatsApp available</p>
+</div>
 
-function showCars(){
- document.getElementById('carsSection').style.display="block";
+<div class="footer">
+<p>© 2026 EZ Car Rental Malta</p>
+</div>
 
- let days=getDays();
- let insurance=document.getElementById('insurance').value;
- let insuranceCost = (insurance === "Insurance Included") ? 24 : 0;
- let type=document.getElementById('serviceType').value;
- let loc=document.getElementById('location').value;
-
- let box=document.getElementById('cars');
- box.innerHTML="";
-
- let baseInfo = baseCars[0].price + insuranceCost;
-
- document.getElementById('summary').innerHTML =
- `📊 ${days} day(s) | ${type} | ${insurance}`;
-
- baseCars.forEach(c=>{
-
-  let pricePerDay = c.price + insuranceCost;
-  let total = pricePerDay * days;
-
-  box.innerHTML += `
-  <div class='car'>
-    <h3>${c.name}</h3>
-    <p class='price'>€${pricePerDay}/day</p>
-    <p><b>Total: €${total}</b></p>
-    <button onclick="book()">Book</button>
-  </div>
-  `;
- });
-}
-
-function book(){
- // just open whatsapp chat (no message)
- window.open("https://wa.me/3560000000","_blank");
-}
-</script>
+<a class="whatsapp" href="https://wa.me/35677038260?text=Hi%20I%20want%20to%20book%20a%20car" target="_blank">
+💬 Chat
+</a>
 
 </body>
 </html>
